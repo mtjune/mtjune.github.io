@@ -8,6 +8,7 @@
 
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,11 +18,28 @@
   <![endif]-->
 </head>
 <body>
-  <div class="page-header" bgcolor="#33aa33">
-    <h1>MtJune</h1>
+  <div id="img-background">
+      <img src="res/background.jpg" alt="" class="img-responsive" id="img-background">
+      <div id="content" class="img-rounded">
+        <section class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <img id="img-icon" class="img-rounded" src="res/icon_large.jpg" alt="">
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-7">
+              <h1 class="margined">YAMAJUN</h1>
+              <div class="row">
+                <div class="col-lg-3"><a href="https://twitter.com/MtJune11" class="btn btn-default btn-lg margined" role="button">Twitter</a></div>
+                <div class="col-lg-3"><a href="https://github.com/mtjune" class="btn btn-default btn-lg margined" role="button">Github</a></div>
+                <div class="col-lg-3"><a href="http://mtjune.hateblo.jp/" class="btn btn-default btn-lg margined" role="button">Blog</a></div>
+                <div class="col-lg-3"><a href="" class="btn btn-default btn-lg disabled margined" role="button">Flickr</a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
   </div>
-  <img src="res/background.jpg" alt="" class="img-responsive">
-  <h1>MtJune</h1>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

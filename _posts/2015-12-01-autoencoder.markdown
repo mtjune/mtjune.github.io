@@ -21,8 +21,10 @@ $$ \mathbf{y}(\mathbf{x}) = f(\mathbf{W}\mathbf{x} + \mathbf{b}) $$
 
 となる．
 
-さらに，出力を$$\hat{\mathbf{x}}(\mathbf{x})$$とすると，中間層から出力層への計算は  
+さらに，出力を$$\hat{\mathbf{x}}(\mathbf{x})$$とすると，中間層から出力層への計算は
+
 $$ \hat{\mathbf{x}}(\mathbf{x}) = \tilde{f}(\tilde{\mathbf{W}}\mathbf{y}(\mathbf{x}) + \tilde{\mathbf{b}}) $$  
+
 と表せる．
 
 まとめると，$$\mathbf{x}$$が入力された時の自己符号化器の出力$$\hat{\mathbf{x}}(\mathbf{x})$$は  

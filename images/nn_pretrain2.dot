@@ -40,7 +40,7 @@ digraph G {
   subgraph cluster_3 {
     node [style=solid, shape=circle];
     u3_1 u3_2 u3_3;
-    label = "出力層";
+    label = "第3層";
   }
 
 

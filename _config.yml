@@ -10,7 +10,7 @@ title: 余白
 email: mtjuney@gmail.com
 description: > # 余白です
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "mtjune.com" # the base hostname & protocol for your site
+# url: "mtjune.github.io" # the base hostname & protocol for your site
 twitter_username: MtJuney
 github_username:  mtjune
 

@@ -10,34 +10,37 @@ digraph G {
   subgraph cluster_0 {
 		node [style=solid, shape=circle];
 		x1 x2 x3 x4 x5;
-		label = "";
+		label = "入力層";
 	}
 
 	subgraph cluster_1 {
 		node [style=solid, shape=circle];
 		u1_1 u1_2 u1_3;
-		label = "";
+		label = "第1層";
 	}
 
   subgraph cluster_1_d {
 		node [style=solid, shape=circle];
 		u1_1_d u1_2_d u1_3_d;
-		label = "";
+		label = "第1層";
 	}
 
   subgraph cluster_2 {
     node [style=solid, shape=circle];
     u2_1 u2_2 u2_3;
+    label = "第2層";
   }
 
   subgraph cluster_2_d {
     node [style=solid, shape=circle];
     u2_1_d u2_2_d u2_3_d;
+    label = "第2層";
   }
 
   subgraph cluster_3 {
     node [style=solid, shape=circle];
     u3_1 u3_2 u3_3;
+    label = "出力層";
   }
 
 
@@ -55,6 +58,6 @@ digraph G {
           u1_2 -> u1_2_d;
           u2_2 -> u2_2_d;
         }
-        
+
 
 }

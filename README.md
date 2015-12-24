@@ -1,42 +1,14 @@
-# Paper for Jekyll
-A new material design utilising theme for your Jekyll blog. Built on [Material Design Lite](http://www.getmdl.io/).
+# Jekyll-Pithy
 
-![screenshot](assets/screenshots/mockup.jpg)
+Jekyll-Pithy is a theme for Jekyll. Here is [my blog](http://wenva.github.io) which use this theme.
 
-## Demo
- [dbtek.github.io/paper-demo](http://dbtek.github.io/paper-demo)
+![image](https://raw.githubusercontent.com/smallmuou/Jekyll-Pithy/master/images/Jekyll-Pithy.png)
 
-### Batteries Included
-There are many cool features bundled with Paper such as:
-
-- Full Github Pages support.
-- Responsive layout.
-- Dynamic search with [jekyll-search](https://github.com/christian-fei/Simple-Jekyll-Search/).
-- Customizable theme colors.
-- Sass variables.
-- RSS feed.
-- Post tags and categories.
-- Pagination.
-- Syntax highlighting with pygments.
-- Disqus comments.
-
-### Tech
-Under the hood Paper contains:  
-- Material Design Lite.
-- CoffeeScript.
-- Sass.
-
-### Install
-Easiest way of getting Paper work is forking.
-
-- Fork the [repo](https://github.com/dbtek/paper).
-- Rename forked repo as `username.github.io`.
-- Set up blog by editing `_config.yml`.
-- Enjoy.
-
-### Author
-Ismail Demirbilek
-[@dbtek](https://twitter.com/dbtek)
+### Usage
+* Clone it.
+* cd Jekyll-Pithy, and Run "jekyll serve"(You must install [jekyll](http://jekyllrb.com/) first)
+* Open web browser and enter "http://127.0.0.1:4000/", you can see the web page like snapshot above.
+* If you want to host you blog on Github Page, you can follow the steps provide by Github.
 
 ### License
-[MIT](http://opensource.org/licenses/MIT)
+The code follows MIT License.

@@ -10,7 +10,9 @@ Deep Learning勉強会 第4回
 # 5.1 概要
 
 
-\\[ \delta_l^{(l)} = \left\{ \sum_k \delta_k^{(l+1)} w_{kj}^{(l+1)} + \beta \left( - \frac{\rho}{\hat{\rho}_j} + \frac{1-\rho}{1-\hat{\rho}_j} \right) \right\} f'(u_j^{(l)}) \\]
+$$
+\delta_l^{(l)} = \left\{ \sum_k \delta_k^{(l+1)} w_{kj}^{(l+1)} + \beta \left( - \frac{\rho}{\hat{\rho}_j} + \frac{1-\rho}{1-\hat{\rho}_j} \right) \right\} f'(u_j^{(l)})
+$$
 
 自己符号化器はニューラルネットにおいて，目標とする出力(正解データ)を入力と同じにした教師なし学習を行うときに用いられるモデル．
 

@@ -1,18 +1,44 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+permalink: /:year-:month-:day/:title/
 
-# Site settings
-title: 余白
-email: mtjuney@gmail.com
-description: > # 余白です
-baseurl: "" # the subpath of your site, e.g. /blog
-# url: "mtjune.github.io" # the base hostname & protocol for your site
-twitter_username: MtJuney
-github_username:  mtjune
+highlighter: pygments
+markdown: redcarpet
+redcarpet:
+  extensions: [
+   "no_intra_emphasis"
+   ,"fenced_code_blocks"
+   ,"autolink"
+   ,"tables"
+   ,"strikethrough"
+   ,"superscript"
+   ,"with_toc_data"
+   ,"footnotes"
+   ,"highlight"
+   ,"underline"
+   ,"quote"
+   ,"lax_spacing"
+   ,"prettify"
+#   ,"html_toc"
+  ]
 
-# Build settings
-markdown: kramdown
+
+
+paginate: 10
+paginate_path: ":num"
+baseurl: ""
+
+
+
+title: "RainyAlley"
+email: "dubuyuye@yeah.net"
+description: "Developer"
+github_username:  "dubuyuye"
+swiftype_searchId: "ncwR9a8S9CTx2q9SgsJm"
+disqus_shortname: "rainyalley"
+
+
+
+url: "http://blog.rainyalley.com"
+imgrepo: "http://blog.rainyalley.com/static/img"
+#url: "http://127.0.0.1:4000"
+#imgrepo: "http://127.0.0.1:4000/static/img"
+

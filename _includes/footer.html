@@ -1,15 +1,9 @@
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span12 footer navbar-inverse navbar-fixed-bottom">
-            <p class="copyright">&copy;{{ site.time | date: '%Y' }} {{ site.name }}. Powered by <a href="http://jekyllrb.com">Jekyll</a>, theme by <a href="https://github.com/scotte/jekyll-clean">Scott Emmons</a>
-            under
-            <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution</a></p>
-        </div>
-    </div>
-</div>
-
-{% include disqus-counts.html %}
-{% include analytics.html %}
-
-</body>
-</html>
+<section id="footer">
+  <ul class="icons">
+  	<li><a href="https://twitter.com/{{ site.twitter_username }}" class="fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/{{ site.github_username }}" class="fa-github"><span class="label">GitHub</span></a></li>
+		<li><a href="/feed.xml" class="fa-rss"><span class="label">RSS</span></a></li>
+		<li><a href="mailto:{{ site.email }}" class="fa-envelope"><span class="label">Email</span></a></li>
+	</ul>
+  <p class="copyright">Copyright &copy; 2015 {{ site.author }}</p>
+</section>

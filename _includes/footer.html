@@ -1,13 +1,9 @@
-<footer class="site-footer">
-
-  <p>Copyright &copy; <a href="{{ site.baseurl }}/">{{site.title}}</a></p>
-  <p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a> 
-  on 
-  {% if site.github_username %}
-  <a href="https://github.com/">Github</a>
-  {% else %}
-  GitHub 
-  {% endif %}
-  | Theme <a href="https://github.com/yulijia/freshman21/">Freshman21</a> Design by <a href="http://yulijia.net">Lijia Yu</a>  
-
-</footer>
+<section id="footer">
+  <ul class="icons">
+  	<li><a href="https://twitter.com/{{ site.twitter_username }}" class="fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/{{ site.github_username }}" class="fa-github"><span class="label">GitHub</span></a></li>
+		<li><a href="/feed.xml" class="fa-rss"><span class="label">RSS</span></a></li>
+		<li><a href="mailto:{{ site.email }}" class="fa-envelope"><span class="label">Email</span></a></li>
+	</ul>
+  <p class="copyright">Copyright &copy; 2015 {{ site.author }}</p>
+</section>

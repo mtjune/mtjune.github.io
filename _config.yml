@@ -1,36 +1,36 @@
-title: "blog title"
-author: "Blog Author"
-description: "Really cool blog about ... something"
-#subheading: "Really cool blog about ... something"
-more: "read more"
-url: "http://niklabs.me"
-baseurl: "/contrast" # comment out if in root directory
+# Jekyll configuration
 
-comments:
-    disqus: "niklasbuschmann"
-#    isso: "comments.mysite.org"
+name: My blog
+description: A jekyll theme
 
-style:
-#    body: "whitesmoke"
-    padding: 33%
-    anchor: "#46f"
-    serif-heading: true
-    nav: "#181818"
-#    headline: "#06f"
-    description: "white"
-    article:
-        odd: "#ffffff"
-        even: "#222222"
+# url is currently only used only for the RSS feed in feed.xml
+url: http://scotte.github.io
 
-links:
-  - github: "https://github.com/me/"
-  - twitter: "https://twitter.com/me/"
-  - google-plus: "https://plus.google.com/+me"
-  - reddit: "https://www.reddit.com/user/me/"
-  - youtube: "https://www.youtube.com/user/me"
-  - steam: "http://steamcommunity.com/id/me/"
+# baseurl will often be '', but for a project page on gh-pages, it needs to
+# be the project name.
+# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
+#     run it like so: jekyll serve --baseurl=''
+baseurl: /jekyll-clean
 
-paginate: 10
-excerpt_separator: "\n\n\n" # excerpt ends after two blank lines
-defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
-gems: [jekyll-feed] # include feed plugin (supported by gh-pages)
+# This can be '' to hide the Github nav button
+github: 'scotte/jekyll-clean'
+
+# Set this to your UA-# value, or '' to disable the block completely
+gaaccount: ''
+
+# Set this to your disqus shortname to enable comments. Note that the 'comments'
+# setting below must also be true. Individual posts can override 'comments' to
+# disable on a post-by-post basis
+disqus: ''
+comments: true
+
+permalink: /:year/:month/:title
+paginate: 3
+
+highlighter: pygments
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+gems: ['jekyll-paginate']
+
+exclude: ['README.md', 'LICENSE']

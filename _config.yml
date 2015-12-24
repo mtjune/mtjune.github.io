@@ -28,17 +28,16 @@ baseurl: ""
 
 
 
-title: "RainyAlley"
-email: "dubuyuye@yeah.net"
-description: "Developer"
-github_username:  "dubuyuye"
-swiftype_searchId: "ncwR9a8S9CTx2q9SgsJm"
-disqus_shortname: "rainyalley"
+title: "余白"
+email: "mtjuney@gmail.com"
+description: "余白です"
+github_username:  "mtjune"
+# swiftype_searchId: "ncwR9a8S9CTx2q9SgsJm"
+disqus_shortname: "mtjune"
 
 
 
-url: "http://blog.rainyalley.com"
-imgrepo: "http://blog.rainyalley.com/static/img"
+url: "mtjune.github.io"
+imgrepo: "mtjune.github.io/static/img"
 #url: "http://127.0.0.1:4000"
 #imgrepo: "http://127.0.0.1:4000/static/img"
-

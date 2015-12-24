@@ -1,34 +1,53 @@
-##[点我查看中文说明](https://github.com/dubuyuye/blog/blob/gh-pages/README_zh_CN.md)
+Freshman21
+==========
 
-# Blog Address
+Freshman21 is a Jekyll blog theme, base on theme [Freshman](http://github.com/yulijia/freshman). 
 
-<http://blog.rainyalley.com/>
+A tribute to WordPress Theme Twenty-Twelve and Twenty-eleven.
+
+Enjoy.
 
 
-# Must Modify
+![Screen](http://i.imgur.com/oSp7kacl.png)
 
-## 1.swiftype
+### Version 2.0 update 2015.03.31
 
-This service provides the on-site search function.
+- master branch: the simplest template, original version.
 
-Service address： <https://swiftype.com/>.
+- gh-pages branch: master branch with google analytics js template, BackToTop js script, readmore module.
 
-After the setup is complete， you need to modify the `swiftype_searchId` in `_config.yml`.
+Clone master branch: 
+ 
+`git clone https://github.com/yulijia/freshman21.git -b master --single-branch`
+ 
+Clone gh-pages branch: 
+ 
+`git clone https://github.com/yulijia/freshman21.git -b gh-pages --single-branch`
 
-In your swiftype engine, go to `Setup and integration` -> `Install Search`, you could find the `swiftype_searchId`.
 
-```html
-<script type="text/javascript">
-...
-...
-  _st('install','swiftype_searchId','2.0.0');
-</script>
+### How to install this theme?
+
+```
+# please make sure you have already installed git tools and ruby tools(gem)
+$ gem install sass
+$ gem install jekyll
+$ git clone https://github.com/yulijia/freshman21.git
+$ mv freshman21/ yourblogname.github.io/
 ```
 
-## 2.disqus
+### A Summary of Features
 
-This service provides the comment function.
+- Provide single column and two columns layout
+- Powerful configure file
+- Comments by Disqus
+- Support LaTeX (by MathJax)
+- Syntax highlighting
 
-Service address： <https://disqus.com/>.
 
-After the setup is complete， you need to modify the `disqus_shortname` in `_config.yml`.
+### Demo
+
+Single column, please see [my own blog](http://yulijia.net/en/)
+
+Two columns, please see the [theme website](http://yulijia.net/freshman21/)
+
+

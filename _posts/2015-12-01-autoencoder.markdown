@@ -102,8 +102,12 @@ Deep Learning勉強会 第4回
 
 具体的にはもともとの誤差関数\\(E(\mathbf{w})\\)に正則化項を加えたもの，
 
-\\[
+<!-- \\[
  \tilde{E}(\mathbf{w}) \equiv E(\mathbf{w}) + \beta \sum_{j=1}^{D_y} \mathrm{KL}(\rho \| \hat{\rho}_j)
+\\] -->
+
+\\[
+ \tilde{E}(\mathbf{w}) \equiv E(\mathbf{w}) + \beta \sum_{j=1}^{D} \mathrm{KL}(\rho \| \hat{\rho})
 \\]
 
 を最小化する．  
@@ -154,7 +158,7 @@ Deep Learning勉強会 第4回
 
 #### 白色化の手順
 
-$$D$$次元の訓練用サンプル\\(\mathbf{x} = [ x_1 ,...,x_D ]\\)に対し，  
+\\(D\\)次元の訓練用サンプル\\(\mathbf{x} = [ x_1 ,...,x_D ]\\)に対し，  
 各サンプルから全サンプルの平均を引いたものを\\(\mathbf{x}_1 ,..., \mathbf{x}_N\\)とする．  
 サンプルの成分間の相関は共分散行列
 

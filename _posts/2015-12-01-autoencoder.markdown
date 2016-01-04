@@ -135,7 +135,7 @@ Deep Learning勉強会 第4回
 の値を求めればよく，計算すると，最終的に第\\(l\\)層のデルタを求める式は
 
 \\[
-\delta\_l^{(l)} = \left\{ \sum\_k \delta\_k^{(l+1)} w\_{kj}^{(l+1)} + \beta \left( - \frac{\rho}{\hat{\rho}\_j} + \frac{1 - \rho}{1 - \hat{\rho}\_j} \right) \right\} f'(u\_j^{(l)})
+\delta\_l^{(l)} = \left{ \sum\_k \delta\_k^{(l+1)} w\_{kj}^{(l+1)} + \beta \left( - \frac{\rho}{\hat{\rho}\_j} + \frac{1 - \rho}{1 - \hat{\rho}\_j} \right) \right} f'(u\_j^{(l)})
 \\]
 
 となる．

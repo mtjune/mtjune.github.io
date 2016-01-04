@@ -36,7 +36,7 @@ Deep Learning勉強会 第4回
 となる．
 
 
-このようなモデルに対して，訓練データ\\(\mathbf{x}_1 , \mathbf{x}_2 , \mathbf{x}_3 ,..., \mathbf{x}_N \\) が与えられた時，任意のサンプル \\(\mathbf{x}_n\\) を入力した時の出力 \\(\hat{\mathbf{x}}(\mathbf{x}_n)\\) が \\(\mathbf{x}_n\\)に近付くように重みを調整していく．
+このようなモデルに対して，訓練データ\\(\mathbf{x}\_1 , \mathbf{x}\_2 , \mathbf{x}\_3 ,..., \mathbf{x}\_N \\) が与えられた時，任意のサンプル \\(\mathbf{x}\_n\\) を入力した時の出力 \\(\hat{\mathbf{x}}(\mathbf{x}\_n)\\) が \\(\mathbf{x}\_n\\)に近付くように重みを調整していく．
 
 このとき，
 
@@ -62,7 +62,7 @@ Deep Learning勉強会 第4回
 
 #### 重み共有
 
-入力層のユニット数が\\(D_x\\)，中間層のユニット数が\\(D_y\\)のとき，重み行列のサイズはそれぞれ\\(\mathbf{W}\\)は\\(D_x \times D_y\\)，\\(\tilde{\mathbf{W}}\\)は\\(D_y \times D_x\\)．  
+入力層のユニット数が\\(D\_x\\)，中間層のユニット数が\\(D\_y\\)のとき，重み行列のサイズはそれぞれ\\(\mathbf{W}\\)は\\(D\_x \times D\_y\\)，\\(\tilde{\mathbf{W}}\\)は\\(D\_y \times D\_x\\)．  
 学習を行うとき，この二つの重みを
 
 \\[
@@ -103,18 +103,18 @@ Deep Learning勉強会 第4回
 具体的にはもともとの誤差関数\\(E(\mathbf{w})\\)に正則化項を加えたもの，
 
 <!-- \\[
- \tilde{E}(\mathbf{w}) \equiv E(\mathbf{w}) + \beta \sum_{j=1}^{D_y} \mathrm{KL}(\rho \| \hat{\rho}_j)
+ \tilde{E}(\mathbf{w}) \equiv E(\mathbf{w}) + \beta \sum\_{j=1}^{D\_y} \mathrm{KL}(\rho \| \hat{\rho}\_j)
 \\] -->
 
 \\[
- \tilde{E}(\mathbf{w}) \equiv E(\mathbf{w}) + \beta \sum_{j=1}^{D} \mathrm{KL}(\rho \| \hat{\rho})
+ \tilde{E}(\mathbf{w}) \equiv E(\mathbf{w}) + \beta \sum\_{j=1}^{D} \mathrm{KL}(\rho \| \hat{\rho})
 \\]
 
 を最小化する．  
-\\(\hat{\rho}_j\\)はj番目のユニットの平均活性度の推定値，\\(\rho\\)はその目標値，\\(\mathrm{KL}(\rho \| \hat{\rho}_j)\\)はカルバック・ライブラー・ダイバージェンスと言われこの二つの近さを与えるもので，
+\\(\hat{\rho}\_j\\)はj番目のユニットの平均活性度の推定値，\\(\rho\\)はその目標値，\\(\mathrm{KL}(\rho \| \hat{\rho}\_j)\\)はカルバック・ライブラー・ダイバージェンスと言われこの二つの近さを与えるもので，
 
 \\[
- \mathrm{KL}( \rho \| \hat{\rho}_j ) = \rho \log \left( \frac{\rho}{\hat{\rho}_j} \right) + (1 - \rho) \log \left( \frac{1 - \rho}{1 - \hat{\rho}_j} \right)
+ \mathrm{KL}( \rho \| \hat{\rho}\_j ) = \rho \log \left( \frac{\rho}{\hat{\rho}\_j} \right) + (1 - \rho) \log \left( \frac{1 - \rho}{1 - \hat{\rho}\_j} \right)
 \\]
 
 で計算される．  
@@ -127,24 +127,24 @@ Deep Learning勉強会 第4回
 3章で紹介された重み減衰も誤差関数に新たな項を付け足したものを最小化していたが，あちらは重みに対する制約なので，重みの更新式(つまり\\(\partial \mathbf{W}\\)を求める式)を修正するだけでよかった．  
 対してスパース正規化は対象とした層のユニットの活性度に対する制約である．ユニットの活性度はその層よりも入力側にあるパラメータの影響を受けるため，正則化項の影響を入力側に伝搬させなければならない．そのためにはデルタの計算式を修正する必要がある．
 
-第\\(l\\)層のデルタを求めるためには\\(\frac{\partial \tilde{E}(\mathbf{w})}{\partial u_j^{(l)}}\\)を計算する必要があるが，微分は線形変換なので追加した正規化項の微分を求めてそれをデルタに足せばよい．  
+第\\(l\\)層のデルタを求めるためには\\(\frac{\partial \tilde{E}(\mathbf{w})}{\partial u\_j^{(l)}}\\)を計算する必要があるが，微分は線形変換なので追加した正規化項の微分を求めてそれをデルタに足せばよい．  
 したがって，
 
-\\(\frac{\partial}{\partial u_j^{(l)}} \left( \beta \sum_{j=1}^{D_l} \mathrm{KL}( \rho \| \hat{\rho}_j ) \right)\\)
+\\(\frac{\partial}{\partial u\_j^{(l)}} \left( \beta \sum\_{j=1}^{D\_l} \mathrm{KL}( \rho \| \hat{\rho}\_j ) \right)\\)
 
 の値を求めればよく，計算すると，最終的に第\\(l\\)層のデルタを求める式は
 
 \\[
-\delta_l^{(l)} = \left\{ \sum_k \delta_k^{(l+1)} w_{kj}^{(l+1)} + \beta \left( - \frac{\rho}{\hat{\rho}_j} + \frac{1-\rho}{1-\hat{\rho}_j} \right) \right\} f'(u_j^{(l)})
+\delta\_l^{(l)} = \left\{ \sum\_k \delta\_k^{(l+1)} w\_{kj}^{(l+1)} + \beta \left( - \frac{\rho}{\hat{\rho}\_j} + \frac{1-\rho}{1-\hat{\rho}\_j} \right) \right\} f'(u\_j^{(l)})
 \\]
 
 となる．
 正規化項は中間層の活性化の制約のため，出力層でのデルタには影響しない．
 
-計算に必要な平均活性度\\(\hat{\rho}_j\\)は，実際には全サンプルでの平均活性度を求めるのは非効率なのでその時のミニバッチの平均活性度を求め，過去の値との加重平均をとったものをその時の修正に使う平均活性度\\(\hat{\rho}_j\\)としている．
+計算に必要な平均活性度\\(\hat{\rho}\_j\\)は，実際には全サンプルでの平均活性度を求めるのは非効率なのでその時のミニバッチの平均活性度を求め，過去の値との加重平均をとったものをその時の修正に使う平均活性度\\(\hat{\rho}\_j\\)としている．
 
 \\[
-\hat{\rho}_j^{(t)} = \lambda \hat{\rho}_j^{(t-1)} + (1 - \lambda) \hat{\rho}_j
+\hat{\rho}\_j^{(t)} = \lambda \hat{\rho}\_j^{(t-1)} + (1 - \lambda) \hat{\rho}\_j
 \\]
 
 \\(\lambda\\)は重みである．
@@ -158,57 +158,57 @@ Deep Learning勉強会 第4回
 
 #### 白色化の手順
 
-\\(D\\)次元の訓練用サンプル\\(\mathbf{x} = [ x_1 ,...,x_D ]\\)に対し，  
-各サンプルから全サンプルの平均を引いたものを\\(\mathbf{x}_1 ,..., \mathbf{x}_N\\)とする．  
+\\(D\\)次元の訓練用サンプル\\(\mathbf{x} = [ x\_1 ,...,x\_D ]\\)に対し，  
+各サンプルから全サンプルの平均を引いたものを\\(\mathbf{x}\_1 ,..., \mathbf{x}\_N\\)とする．  
 サンプルの成分間の相関は共分散行列
 
 \\[
-\Phi_X \equiv \frac{1}{N} \sum_{n=1}^N \mathbf{x}_n \mathbf{x}_n^T = \frac{1}{N} \mathbf{X} \mathbf{X}^T
+\Phi\_X \equiv \frac{1}{N} \sum\_{n=1}^N \mathbf{x}\_n \mathbf{x}\_n^T = \frac{1}{N} \mathbf{X} \mathbf{X}^T
 \\]
 
 によって表される．  
 この共分散行列の非対角成分が0であれば成分間の相関は無いことになる．
 
-ここで，任意のサンプル\\(\mathbf{x}_n\\)にある\\(D \times D\\)行列\\(\mathbf{P}\\)による線形変換を行って\\(\mathbf{u}_n\\)を得るとする．
+ここで，任意のサンプル\\(\mathbf{x}\_n\\)にある\\(D \times D\\)行列\\(\mathbf{P}\\)による線形変換を行って\\(\mathbf{u}\_n\\)を得るとする．
 
 \\[
-\mathbf{u}_n = \mathbf{P} \mathbf{x}_n
+\mathbf{u}\_n = \mathbf{P} \mathbf{x}\_n
 \\]
 
-よって全ての\\(\mathbf{u}_n\\)に対する共分散行列が
+よって全ての\\(\mathbf{u}\_n\\)に対する共分散行列が
 
 \\[
-\Phi_U \equiv \frac{1}{N} \sum_{n=1}^N \mathbf{u}_n \mathbf{u}_n^T = \frac{1}{N} \mathbf{U} \mathbf{U}^T = \frac{1}{N} \mathbf{P} \mathbf{X} \mathbf{X}^T \mathbf{P}^T
+\Phi\_U \equiv \frac{1}{N} \sum\_{n=1}^N \mathbf{u}\_n \mathbf{u}\_n^T = \frac{1}{N} \mathbf{U} \mathbf{U}^T = \frac{1}{N} \mathbf{P} \mathbf{X} \mathbf{X}^T \mathbf{P}^T
 \\]
 
 となる．
 
-ここで共分散行列\\(\Phi_U\\)が対角行列になるように\\(\mathbf{P}\\)を選べば，元のサンプル\\(\mathbf{x}_1 ,..., \mathbf{x}_N\\)に\\(\mathbf{P}\\)を掛けることで白色化を行うことができる．  
+ここで共分散行列\\(\Phi\_U\\)が対角行列になるように\\(\mathbf{P}\\)を選べば，元のサンプル\\(\mathbf{x}\_1 ,..., \mathbf{x}\_N\\)に\\(\mathbf{P}\\)を掛けることで白色化を行うことができる．  
 目標とする対角行列を単位行列\\(\mathbf{I}\\)とすると，\\(\mathbf{P}\\)が満たすべき式が以下のように導出できる．
 
 \\[
 \begin{aligned}
-\Phi_U & = \mathbf{I} \\
+\Phi\_U & = \mathbf{I} \\
 \frac{1}{N} \mathbf{P} \mathbf{X} \mathbf{X}^T \mathbf{P}^T & = \mathbf{I} \\
 \frac{1}{N} \mathbf{X} \mathbf{X}^T & = \left( \mathbf{P} \right)^{-1} \left( \mathbf{P}^T \right)^{-1} \\
-\Phi_X & = \left( \mathbf{P}^T \mathbf{P} \right)^{-1} \\
+\Phi\_X & = \left( \mathbf{P}^T \mathbf{P} \right)^{-1} \\
 \\
-\mathbf{P}^T \mathbf{P} & = \Phi_X^{-1}
+\mathbf{P}^T \mathbf{P} & = \Phi\_X^{-1}
 \end{aligned}
 \\]
 
 \\(\Big(\\) 行列積の転置と逆行列に注意 : \\(( \mathbf{A} \mathbf{B} )^T = \mathbf{B}^T \mathbf{A}^T\\) 及び \\(( \mathbf{A} \mathbf{B} )^{-1} = \mathbf{B}^{-1} \mathbf{A}^{-1} \\) \\(\Big)\\)
 
-また，固有ベクトルの定義から\\(\Phi_X\\)は
+また，固有ベクトルの定義から\\(\Phi\_X\\)は
 
 \\[
-\Phi_X = \mathbf{E} \mathbf{D} \mathbf{E}^T
+\Phi\_X = \mathbf{E} \mathbf{D} \mathbf{E}^T
 \\]
 
 と表せる．ここで，
 
-* \\(\mathbf{D}\\)は\\(\Phi_X\\)の固有値\\(\lambda_1 ,..., \lambda_D\\)を対角成分に持つ対角行列
-* \\(\mathbf{E} = [ \mathbf{e}_1 ,..., \mathbf{e}_D ]\\)．　\\(\mathbf{e}_1 ,..., \mathbf{e}_D\\)は\\(\Phi_X\\)の固有値\\(\lambda_1 ,..., \lambda_D\\)に対応する固有ベクトル
+* \\(\mathbf{D}\\)は\\(\Phi\_X\\)の固有値\\(\lambda\_1 ,..., \lambda\_D\\)を対角成分に持つ対角行列
+* \\(\mathbf{E} = [ \mathbf{e}\_1 ,..., \mathbf{e}\_D ]\\)．　\\(\mathbf{e}\_1 ,..., \mathbf{e}\_D\\)は\\(\Phi\_X\\)の固有値\\(\lambda\_1 ,..., \lambda\_D\\)に対応する固有ベクトル
 
 である．
 
@@ -236,10 +236,10 @@ Deep Learning勉強会 第4回
 この白色化は共分散行列の固有値を利用するという点がPCA(主成分分析)と似ているので，ここで求めた\\(\mathbf{P}\\)を **PCA白色化** と呼ぶことにする(一般に呼ばれてはいない？)．
 
 また，\\(\mathbf{P}\\)を対称行列に制限したものもあり，それは **ゼロ位相白色化(ZCA)** と呼ばれる(こっちは呼ばれている)．  
-ZCAに用いる\\(\mathbf{P}_{ZCA}\\)は上式を\\(\mathbf{Q} = \mathbf{E}\\)とすればよく，
+ZCAに用いる\\(\mathbf{P}\_{ZCA}\\)は上式を\\(\mathbf{Q} = \mathbf{E}\\)とすればよく，
 
 \\[
-\mathbf{P}_{ZCA} = \mathbf{E} \mathbf{D}^{-1/2} \mathbf{E}^T
+\mathbf{P}\_{ZCA} = \mathbf{E} \mathbf{D}^{-1/2} \mathbf{E}^T
 \\]
 
 となる．
@@ -268,7 +268,7 @@ ZCAに用いる\\(\mathbf{P}_{ZCA}\\)は上式を\\(\mathbf{Q} = \mathbf{E}\\)�
 
 ここで，\\(\mathbf{W^{(1)}}\\)から順番に学習していく．  
 まず一番左の単層ニューラルネットを第1層で折り返し，自己符号化器を作って\\(\mathbf{W^{(1)}}\\)の学習を行う．  
-ここで学習に使う入力データを\\(\mathbf{X_n}\\)とする．
+ここで学習に使う入力データを\\(\mathbf{X\_n}\\)とする．
 
 ![nn]({{site.url}}/images/nn_pretrain3.svg)
 

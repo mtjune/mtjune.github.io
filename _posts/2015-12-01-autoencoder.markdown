@@ -130,12 +130,14 @@ Deep Learning勉強会 第4回
 第\\(l\\)層のデルタを求めるためには\\(\frac{\partial \tilde{E}(\mathbf{w})}{\partial u\_j^{(l)}}\\)を計算する必要があるが，微分は線形変換なので追加した正規化項の微分を求めてそれをデルタに足せばよい．  
 したがって，
 
-\\(\frac{\partial}{\partial u\_j^{(l)}} \left( \beta \sum\_{j=1}^{D\_l} \mathrm{KL}( \rho \| \hat{\rho}\_j ) \right)\\)
+\\[
+  \frac{\partial}{\partial u\_j^{(l)}} \left( \beta \sum\_{j=1}^{D\_l} \mathrm{KL}( \rho \| \hat{\rho}\_j ) \right)
+\\]
 
 の値を求めればよく，計算すると，最終的に第\\(l\\)層のデルタを求める式は
 
 \\[
-  \delta\_l^{(l)} = \left\{ \sum\_k \delta\_k^{(l+1)} w\_{kj}^{(l+1)} + \beta \left( - \frac{\rho}{\hat{\rho}\_j} + \frac{1 - \rho}{1 - \hat{\rho}\_j} \right) \right\} f'(u\_j^{(l)})
+  \delta\_l^{(l)} = \left{ \sum\_k \delta\_k^{(l+1)} w\_{kj}^{(l+1)} + \beta \left( - \frac{\rho}{\hat{\rho}\_j} + \frac{1 - \rho}{1 - \hat{\rho}\_j} \right) \right} f'(u\_j^{(l)})
 \\]
 
 となる．

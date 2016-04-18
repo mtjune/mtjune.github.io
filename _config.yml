@@ -11,9 +11,9 @@ url: http://mtjune.github.io
 
 # Harmony theme configuration. Please change accordingly.
 harmony:
-  name: 余白
+  name: "余白"
   # Little description about your site
-  description: 余白
+  description: "余白"
   # 'meta_description:' Write an awesome description for your new site here.
   # It will appear in your document head meta (for Google search results) and
   # in your feed.xml site description.

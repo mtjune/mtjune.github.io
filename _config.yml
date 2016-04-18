@@ -28,7 +28,7 @@ harmony:
     url: http://mtjune.github.io
 
   # Google Analytics key, leave blank to ignore
-  google_analytics_key: UA-xxxx-x
+  # google_analytics_key: UA-xxxx-x
 
   # Profile links, leave blank to ignore
   social:
